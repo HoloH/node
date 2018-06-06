@@ -1,0 +1,28 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1>Please play rock, paper, scissor</h1>
+        </div>
+        <div class="col-12">
+            {{#if post}}
+                The computer chose the sign {{computerSign}}.
+                User 1 chose {{userSign}}.
+                {{winningUser}} is the winner.
+            {{/if}}
+            {{#unless post}}
+                <form action="/game" method="post">
+                    <div class="form-group">
+                        <label for="userSign">Chose rock, paper or scissor</label>
+                        <select class="form-control" id="UserSign" name="userSign" placeholder="Enter your choice">
+                            <option>Rock</option>
+                            <option>Paper</option>
+                            <option>Scissor</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            {{/unless}}
+        </div>
+    </div>
+</div>
